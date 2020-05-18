@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/RossMerr/herms/src/controller/measurements"
+	"github.com/RossMerr/go-measurements"
 )
 
 func Test_temperature_ToCelsius(t *testing.T) {

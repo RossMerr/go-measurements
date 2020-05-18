@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/RossMerr/herms/src/controller/measurements"
+	"github.com/RossMerr/go-measurements"
 )
 
 func Test_pressure_ToTorr(t *testing.T) {
@@ -20,7 +20,7 @@ func Test_pressure_ToTorr(t *testing.T) {
 		{
 			name: "Torr to Torr",
 			fields: fields{
-				unit: measurements.Torr,
+				unit:  measurements.Torr,
 				value: 10,
 			},
 			want: measurements.FromTorr(10),
@@ -28,7 +28,7 @@ func Test_pressure_ToTorr(t *testing.T) {
 		{
 			name: "Bar to Torr",
 			fields: fields{
-				unit: measurements.Bar,
+				unit:  measurements.Bar,
 				value: 0.0133322,
 			},
 			want: measurements.FromTorr(10),
@@ -36,7 +36,7 @@ func Test_pressure_ToTorr(t *testing.T) {
 		{
 			name: "Pascal to Torr",
 			fields: fields{
-				unit: measurements.Pascal,
+				unit:  measurements.Pascal,
 				value: 1333.22,
 			},
 			want: measurements.FromTorr(10.02),
@@ -44,7 +44,7 @@ func Test_pressure_ToTorr(t *testing.T) {
 		{
 			name: "PoundForcePerSquareInch to Torr",
 			fields: fields{
-				unit: measurements.PoundForcePerSquareInch,
+				unit:  measurements.PoundForcePerSquareInch,
 				value: 0.193368,
 			},
 			want: measurements.FromTorr(10),
@@ -60,7 +60,6 @@ func Test_pressure_ToTorr(t *testing.T) {
 	}
 }
 
-
 func Test_pressure_ToBar(t *testing.T) {
 	type fields struct {
 		unit  measurements.PressureUnit
@@ -74,7 +73,7 @@ func Test_pressure_ToBar(t *testing.T) {
 		{
 			name: "Torr to Bar",
 			fields: fields{
-				unit: measurements.Torr,
+				unit:  measurements.Torr,
 				value: 7500.62,
 			},
 			want: measurements.FromBar(10),
@@ -82,7 +81,7 @@ func Test_pressure_ToBar(t *testing.T) {
 		{
 			name: "Bar to Bar",
 			fields: fields{
-				unit: measurements.Bar,
+				unit:  measurements.Bar,
 				value: 10,
 			},
 			want: measurements.FromBar(10),
@@ -90,15 +89,15 @@ func Test_pressure_ToBar(t *testing.T) {
 		{
 			name: "Pascal to Bar",
 			fields: fields{
-				unit: measurements.Pascal,
+				unit:  measurements.Pascal,
 				value: 1e+6,
 			},
-			want: measurements.FromBar(10.02),
+			want: measurements.FromBar(10),
 		},
 		{
 			name: "PoundForcePerSquareInch to Bar",
 			fields: fields{
-				unit: measurements.PoundForcePerSquareInch,
+				unit:  measurements.PoundForcePerSquareInch,
 				value: 145.038,
 			},
 			want: measurements.FromBar(10),
@@ -114,7 +113,6 @@ func Test_pressure_ToBar(t *testing.T) {
 	}
 }
 
-
 func Test_pressure_ToPascal(t *testing.T) {
 	type fields struct {
 		unit  measurements.PressureUnit
@@ -128,15 +126,15 @@ func Test_pressure_ToPascal(t *testing.T) {
 		{
 			name: "Torr to Pascal",
 			fields: fields{
-				unit: measurements.Torr,
+				unit:  measurements.Torr,
 				value: 0.0750062,
 			},
-			want: measurements.FromPascal(10),
+			want: measurements.FromPascal(9.98),
 		},
 		{
 			name: "Bar to Pascal",
 			fields: fields{
-				unit: measurements.Bar,
+				unit:  measurements.Bar,
 				value: 1e-4,
 			},
 			want: measurements.FromPascal(10),
@@ -144,7 +142,7 @@ func Test_pressure_ToPascal(t *testing.T) {
 		{
 			name: "Pascal to Pascal",
 			fields: fields{
-				unit: measurements.Pascal,
+				unit:  measurements.Pascal,
 				value: 10,
 			},
 			want: measurements.FromPascal(10),
@@ -152,7 +150,7 @@ func Test_pressure_ToPascal(t *testing.T) {
 		{
 			name: "PoundForcePerSquareInch to Pascal",
 			fields: fields{
-				unit: measurements.PoundForcePerSquareInch,
+				unit:  measurements.PoundForcePerSquareInch,
 				value: 0.00145038,
 			},
 			want: measurements.FromPascal(10),
@@ -168,7 +166,6 @@ func Test_pressure_ToPascal(t *testing.T) {
 	}
 }
 
-
 func Test_pressure_ToPoundForcePerSquareInch(t *testing.T) {
 	type fields struct {
 		unit  measurements.PressureUnit
@@ -182,7 +179,7 @@ func Test_pressure_ToPoundForcePerSquareInch(t *testing.T) {
 		{
 			name: "Torr to PoundForcePerSquareInch",
 			fields: fields{
-				unit: measurements.Torr,
+				unit:  measurements.Torr,
 				value: 517.149,
 			},
 			want: measurements.FromPoundForcePerSquareInch(10),
@@ -190,7 +187,7 @@ func Test_pressure_ToPoundForcePerSquareInch(t *testing.T) {
 		{
 			name: "Bar to PoundForcePerSquareInch",
 			fields: fields{
-				unit: measurements.Bar,
+				unit:  measurements.Bar,
 				value: 0.689476,
 			},
 			want: measurements.FromPoundForcePerSquareInch(10),
@@ -198,7 +195,7 @@ func Test_pressure_ToPoundForcePerSquareInch(t *testing.T) {
 		{
 			name: "Pascal to PoundForcePerSquareInch",
 			fields: fields{
-				unit: measurements.Pascal,
+				unit:  measurements.Pascal,
 				value: 68947.6,
 			},
 			want: measurements.FromPoundForcePerSquareInch(10),
@@ -206,7 +203,7 @@ func Test_pressure_ToPoundForcePerSquareInch(t *testing.T) {
 		{
 			name: "PoundForcePerSquareInch to PoundForcePerSquareInch",
 			fields: fields{
-				unit: measurements.PoundForcePerSquareInch,
+				unit:  measurements.PoundForcePerSquareInch,
 				value: 10,
 			},
 			want: measurements.FromPoundForcePerSquareInch(10),
@@ -221,4 +218,3 @@ func Test_pressure_ToPoundForcePerSquareInch(t *testing.T) {
 		})
 	}
 }
-

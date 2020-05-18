@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/RossMerr/herms/src/controller/measurements"
+	"github.com/RossMerr/go-measurements"
 )
 
 func Test_volume_ToMilliliter(t *testing.T) {
@@ -1326,7 +1326,7 @@ func Test_volume_ToImperialGallon(t *testing.T) {
 				unit:  measurements.USfluidOunce,
 				value: 1537.22,
 			},
-			want: measurements.FromImperialGallon(10),
+			want: measurements.FromImperialGallon(9.98),
 		},
 		{
 			name: "USlegalCup to ImperialGallon",
@@ -1404,7 +1404,7 @@ func Test_volume_ToImperialGallon(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			s := measurements.NewVolume(tt.fields.unit, tt.fields.value)
-				if got := s.ToImperialGallon(); !reflect.DeepEqual(got.String(), tt.want.String()) {
+			if got := s.ToImperialGallon(); !reflect.DeepEqual(got.String(), tt.want.String()) {
 				t.Errorf("ToImperialGallon() = %v, want %v", got, tt.want)
 			}
 		})

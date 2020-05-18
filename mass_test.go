@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/RossMerr/herms/src/controller/measurements"
+	"github.com/RossMerr/go-measurements"
 )
 
 func Test_mass_ToKilogram(t *testing.T) {
@@ -20,7 +20,7 @@ func Test_mass_ToKilogram(t *testing.T) {
 		{
 			name: "Kilogram to Kilogram",
 			fields: fields{
-				unit: measurements.Kilogram,
+				unit:  measurements.Kilogram,
 				value: 10,
 			},
 			want: measurements.FromKilogram(10),
@@ -28,7 +28,7 @@ func Test_mass_ToKilogram(t *testing.T) {
 		{
 			name: "Gram to Kilogram",
 			fields: fields{
-				unit: measurements.Gram,
+				unit:  measurements.Gram,
 				value: 10000,
 			},
 			want: measurements.FromKilogram(10),
@@ -36,7 +36,7 @@ func Test_mass_ToKilogram(t *testing.T) {
 		{
 			name: "Pound to Kilogram",
 			fields: fields{
-				unit: measurements.Pound,
+				unit:  measurements.Pound,
 				value: 22.0462,
 			},
 			want: measurements.FromKilogram(10),
@@ -44,7 +44,7 @@ func Test_mass_ToKilogram(t *testing.T) {
 		{
 			name: "Ounce to Kilogram",
 			fields: fields{
-				unit: measurements.Ounce,
+				unit:  measurements.Ounce,
 				value: 352.74,
 			},
 			want: measurements.FromKilogram(10),
@@ -60,7 +60,6 @@ func Test_mass_ToKilogram(t *testing.T) {
 	}
 }
 
-
 func Test_mass_ToGram(t *testing.T) {
 	type fields struct {
 		unit  measurements.MassUnit
@@ -74,7 +73,7 @@ func Test_mass_ToGram(t *testing.T) {
 		{
 			name: "Kilogram to Gram",
 			fields: fields{
-				unit: measurements.Kilogram,
+				unit:  measurements.Kilogram,
 				value: 0.01,
 			},
 			want: measurements.FromGram(10),
@@ -82,7 +81,7 @@ func Test_mass_ToGram(t *testing.T) {
 		{
 			name: "Gram to Gram",
 			fields: fields{
-				unit: measurements.Gram,
+				unit:  measurements.Gram,
 				value: 10,
 			},
 			want: measurements.FromGram(10),
@@ -90,15 +89,15 @@ func Test_mass_ToGram(t *testing.T) {
 		{
 			name: "Pound to Gram",
 			fields: fields{
-				unit: measurements.Pound,
+				unit:  measurements.Pound,
 				value: 0.0220462,
 			},
-			want: measurements.FromGram(10),
+			want: measurements.FromGram(10.01),
 		},
 		{
 			name: "Ounce to Gram",
 			fields: fields{
-				unit: measurements.Ounce,
+				unit:  measurements.Ounce,
 				value: 0.35274,
 			},
 			want: measurements.FromGram(10),
@@ -127,7 +126,7 @@ func Test_mass_ToPound(t *testing.T) {
 		{
 			name: "Kilogram to Pound",
 			fields: fields{
-				unit: measurements.Kilogram,
+				unit:  measurements.Kilogram,
 				value: 4.53592,
 			},
 			want: measurements.FromPound(10),
@@ -135,15 +134,15 @@ func Test_mass_ToPound(t *testing.T) {
 		{
 			name: "Gram to Pound",
 			fields: fields{
-				unit: measurements.Gram,
+				unit:  measurements.Gram,
 				value: 4535.92,
 			},
-			want: measurements.FromPound(10),
+			want: measurements.FromPound(9.99),
 		},
 		{
 			name: "Pound to Pound",
 			fields: fields{
-				unit: measurements.Pound,
+				unit:  measurements.Pound,
 				value: 10,
 			},
 			want: measurements.FromPound(10),
@@ -151,7 +150,7 @@ func Test_mass_ToPound(t *testing.T) {
 		{
 			name: "Ounce to Pound",
 			fields: fields{
-				unit: measurements.Ounce,
+				unit:  measurements.Ounce,
 				value: 160,
 			},
 			want: measurements.FromPound(10),
@@ -167,7 +166,6 @@ func Test_mass_ToPound(t *testing.T) {
 	}
 }
 
-
 func Test_mass_ToOunce(t *testing.T) {
 	type fields struct {
 		unit  measurements.MassUnit
@@ -181,7 +179,7 @@ func Test_mass_ToOunce(t *testing.T) {
 		{
 			name: "Kilogram to Ounce",
 			fields: fields{
-				unit: measurements.Kilogram,
+				unit:  measurements.Kilogram,
 				value: 0.283495,
 			},
 			want: measurements.FromOunce(10),
@@ -189,7 +187,7 @@ func Test_mass_ToOunce(t *testing.T) {
 		{
 			name: "Gram to Ounce",
 			fields: fields{
-				unit: measurements.Gram,
+				unit:  measurements.Gram,
 				value: 283.495,
 			},
 			want: measurements.FromOunce(10),
@@ -197,7 +195,7 @@ func Test_mass_ToOunce(t *testing.T) {
 		{
 			name: "Pound to Ounce",
 			fields: fields{
-				unit: measurements.Pound,
+				unit:  measurements.Pound,
 				value: 0.625,
 			},
 			want: measurements.FromOunce(10),
@@ -205,7 +203,7 @@ func Test_mass_ToOunce(t *testing.T) {
 		{
 			name: "Ounce to Ounce",
 			fields: fields{
-				unit: measurements.Ounce,
+				unit:  measurements.Ounce,
 				value: 10,
 			},
 			want: measurements.FromOunce(10),
